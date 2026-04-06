@@ -40,6 +40,10 @@ app.get('/search', (req, res) => {
     res.json(results);
 });
 
-app.listen(PORT, () => {
-    console.log(`Assignment A Server is running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Assignment A Server is running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
